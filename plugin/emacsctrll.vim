@@ -4,9 +4,9 @@ endif
 let g:loaded_emacsctrll = 1
 
 if !hasmapto("<Plug>EmacsCtrlL", "i") && "" == mapcheck("<C-L>","i")
-  imap <unique> <C-L> <Plug>EmacsCtrlL
+  imap <C-L> <Plug>EmacsCtrlL
 endif
-inoremap <expr> <unique> <script> <Plug>EmacsCtrlL (pumvisible() <bar><bar> &insertmode) ? '<C-L>' : '<C-\><C-O>' . <SID>EmacsCtrlL()
+inoremap <expr> <script> <Plug>EmacsCtrlL (pumvisible() <bar><bar> &insertmode) ? '<C-L>' : '<C-\><C-O>' . <SID>EmacsCtrlL()
 
 " Old mapping
 " inoremap <expr> <C-L> (pumvisible() <bar><bar> &insertmode) ? '<C-L>' : '<C-\><C-O>' . <SID>EmacsCtrlL()
