@@ -13,16 +13,12 @@ inoremap <expr> <unique> <script> <Plug>EmacsCtrlL (pumvisible() <bar><bar> &ins
 
 function! s:EmacsCtrlL()
   if abs(winline()) <= 1+&scrolloff
-    echom "EmacsCtrlL debug: case 1"
     return 'zb'
   elseif abs(winline() - winheight(0)/2) <= 2
-    echom "EmacsCtrlL debug: case 2"
     return 'zt'
   elseif abs(winline() - winheight(0)) <= 1+&scrolloff
-    echom "EmacsCtrlL debug: case 3"
     return 'zz'
   else
-    echom "EmacsCtrlL debug: case 4"
     return 'zz'
   endif
 endfunction
