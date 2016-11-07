@@ -8,16 +8,11 @@ if !hasmapto("<Plug>EmacsCtrlL", "i") && "" == mapcheck("<C-L>","i")
 endif
 inoremap <expr> <script> <Plug>EmacsCtrlL (pumvisible() <bar><bar> &insertmode) ? '<C-L>' : '<C-\><C-O>' . <SID>EmacsCtrlL()
 
-" Old mapping
-" inoremap <expr> <C-L> (pumvisible() <bar><bar> &insertmode) ? '<C-L>' : '<C-\><C-O>' . <SID>EmacsCtrlL()
-
 function! s:EmacsCtrlL()
   if abs(winline()) <= 1+&scrolloff
     return 'zb'
-  elseif abs(winline() - winheight(0)/2) <= 2
+  elseif abs(winline() - (1+winheight(0))/2) <= 1
     return 'zt'
-  elseif abs(winline() - winheight(0)) <= 1+&scrolloff
-    return 'zz'
   else
     return 'zz'
   endif
