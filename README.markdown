@@ -1,5 +1,10 @@
 # emacsctrll.vim
 
+**NOTE: The keybinding provided by this plugin is now included in
+my [fork of vim-rsi](https://github.com/riceissa/vim-rsi).
+All improvements will appear there; this plugin is no longer
+maintained.**
+
 Crude emulation of `C-L` from Emacs.
 
 The algorithm used is similar to but not the same as what Emacs uses. It
